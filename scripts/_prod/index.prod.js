@@ -26,7 +26,7 @@ import routes from "../../src/routes";
 const store = configureStore();
 
 const app = Express();
-let port = 80;
+let port = 3000;
 
 app.use(Express.static('build'));
 app.use(compression());
