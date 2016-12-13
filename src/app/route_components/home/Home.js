@@ -1,14 +1,20 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import './Home.scss';
-
-import ExampleContainer from '../../../_examples/example_container';
+import Header from '../../reusable/Header/Header';
+import HomeBanner from './HomeBanner/HomeBanner';
+import HomeMainContent from './HomeMainContent/HomeMainContent';
 
 const Home = (props) => {
   return (
     <div id="home">
-      <h1>Application successfully running</h1>
-      <ExampleContainer />
+      <Helmet
+        title="Modernise Recruitment"
+      />
+      <Header />
+      <HomeBanner />
+      <HomeMainContent />
     </div>
   )
 };

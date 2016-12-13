@@ -4,6 +4,11 @@ import DevTools from '../../_dev/DevTools';
 const environment = process.env.NODE_ENV;
 
 import './core.scss';
+import './imports.scss';
+import  '../reusable/resuable.scss';
+
+import './App.scss'
+
 
 /**
  * @author "Tom Freeborough"  <thomas@hotsnapper.com> (27 Jul 2016)
@@ -15,7 +20,7 @@ import './core.scss';
  */
 const App = (props) => {
   return (
-    <div>
+    <div id="App">
       {props.children}
       {environment === 'development'
         ?

@@ -1,0 +1,19 @@
+@import "../application_wrapper/core";
+
+a{
+  color: $fatskill_main;
+}
+
+.button{
+  border: 0.1rem solid $button_grey_border;
+  color:$fatskill_main;
+
+  &:hover{
+    color:$main_bg_color;
+  }
+}
+
+.button.button-outline, button.button-outline, input[type='button'].button-outline, input[type='reset'].button-outline, input[type='submit'].button-outline{
+  border: 0.1rem solid $border_grey;
+  color:$fatskill_main;
+}

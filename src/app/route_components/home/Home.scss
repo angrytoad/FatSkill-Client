@@ -4,27 +4,63 @@
 
 body{
   background-color: $main_bg_color;
+  font-family: Arial, Helvetica, sans-serif;
   margin:0;
 }
 
-#home{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-#home h1{
-  font-weight:200;
-  color: $fatskill_main;
-  text-align: center;
-}
-
-#logo-wrap{
-  text-align: center;
-  display:block;
-  max-width:800px;
+#HomeBanner{
+  background: url('/assets/home_banner.jpg') center;
+  height:375px;
   width:100%;
-  margin:auto;
-}
+  background-size: 100%;
+  display:table;
 
-#logo{
-  width:100%;
+  #HomeBannerContentWrapper{
+    display:table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    #HomeBannerContentWrapperBackground{
+      background: url('/assets/home_banner_colour.jpg');
+      background-position: center;
+      background-size: 100%;
+      padding-top:30px;
+      padding-bottom:30px;
+
+      h2{
+        color: $main_bg_color;
+        text-shadow:1px 1px 1px black;
+        padding:5px;
+        width:auto;
+        display:block;
+        text-transform: lowercase;
+        margin-bottom:10px;
+
+        span{
+          color: #FF7AD7;
+        }
+      }
+
+      p{
+        margin:0px;
+        color: $main_bg_color;
+        font-size:1.8rem;
+      }
+
+      .button-outline{
+        color:$main_bg_color;
+        border: 0.1rem solid $main_bg_color;
+        margin-top:30px;
+        margin-bottom:20px;
+        height:auto;
+        font-size:1.7rem;
+
+        &:hover{
+          border: 0.1rem solid $fatskill_main;
+          background:$main_bg_color;
+          color:$fatskill_main;
+        }
+      }
+    }
+  }
 }
