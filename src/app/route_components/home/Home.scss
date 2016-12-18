@@ -14,6 +14,7 @@ body{
   width:100%;
   background-size: 100%;
   display:table;
+  margin-bottom:100px;
 
   #HomeBannerContentWrapper{
     display:table-cell;
@@ -35,10 +36,6 @@ body{
         display:block;
         text-transform: lowercase;
         margin-bottom:10px;
-
-        span{
-          color: #FF7AD7;
-        }
       }
 
       p{
@@ -63,4 +60,230 @@ body{
       }
     }
   }
+}
+
+
+#HomeMainContent{
+
+  h3{
+    i{
+      font-size:4rem;
+      vertical-align: top;
+      margin-top:3px;
+    }
+  }
+
+  #HomeMainContentIntro{
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-bottom:100px;
+
+    .row{
+      margin-bottom:20px;
+
+      .img-column{
+        img{
+          max-width:300px;
+        }
+      }
+
+    }
+
+    p{
+      font-size:1.6rem;
+      text-align: justify;
+    }
+
+    @media screen and (max-width:640px){
+      .img-column{
+        text-align: center;
+      }
+    }
+  }
+
+  #HomeMainContentImportancyGraph{
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-bottom:100px;
+
+    p{
+      text-align: justify;
+    }
+
+    #ImportancyGraph{
+      padding:1rem;
+      padding-top:20px;
+      padding-bottom:20px;
+      margin-bottom: 2.5rem;
+
+      #y-axis{
+        background:$fatskill_main;
+        color:$white_text;
+        width:32px;
+
+        p{
+          transform: rotate(-90deg);
+          height:100%;
+          width:200px;
+          text-align: center;
+          margin:0px;
+          padding-top:48px;
+        }
+      }
+
+      #x-axis-wrapper{
+        height:32px;
+        width:100%;
+        margin-top:1rem;
+        padding-right:1rem;
+
+        #x-axis{
+          background:$main_bg_color;
+          border-top:1px solid $border_grey;
+          margin-left:32px;
+          height:100%;
+          text-align: center;
+
+          div{
+            padding-top:5px;
+            font-weight:bold;
+            text-align: center;
+
+            i{
+              vertical-align: top;
+              margin-left: 15px;
+              margin-right:15px;
+            }
+          }
+        }
+      }
+
+      li{
+        display:block;
+        width:100%;
+        list-style-type:none;
+        padding:20px;
+        background:$light_grey_background;
+        text-align: right;
+
+        &.active{
+          background:$fatskill_main;
+          color:$white_text;
+
+        }
+
+        &:last-child{
+          margin-bottom:0px;
+        }
+
+        &:nth-child(1){
+          width:100%;
+        }
+
+        &:nth-child(2){
+          width:75%;
+        }
+
+        &:nth-child(3){
+          width:65%;
+        }
+
+        &:nth-child(4){
+          width:35%;
+        }
+      }
+    }
+
+    @media screen and (max-width:640px){
+
+      #ImportancyGraph{
+        padding:0px;
+      }
+
+      #y-axis{
+        display:none;
+      }
+
+      #x-axis-wrapper{
+        #x-axis{
+          margin-left:0px;
+
+          .row .column:first-child{
+            display:none;
+          }
+        }
+      }
+
+      #bars{
+        margin-bottom:0px;
+      }
+    }
+  }
+
+  #HomeMainContentAntiCheat{
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-bottom:100px;
+    background:url('/assets/security_background.png');
+    background-repeat:repeat;
+    color:$white_text;
+
+    h3{
+      text-align: left;
+    }
+
+    .img-column{
+      width: 150px;
+      margin-left: 20px;
+      margin-top:-10px;
+    }
+
+    p{
+      text-align: justify;
+    }
+
+    @media screen and (max-width:640px){
+      .img-column{
+        text-align: center;
+        margin:auto;
+      }
+    }
+  }
+
+  #HomeMainContentFeatures{
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-bottom:100px;
+
+    #FeaturesGrid{
+
+      .row{
+        .column{
+          .feature-wrapper{
+            color:$white_text;
+            background:url('/assets/security_background.png');
+            min-height:200px;
+            padding:1rem;
+            margin-bottom:2rem;
+
+            h5{
+              i{
+                vertical-align: top;
+                margin-top:5px;
+                margin-right:10px;
+              }
+            }
+          }
+
+          &.active{
+            .feature-wrapper{
+              background:$fatskill_main;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
 }

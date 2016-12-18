@@ -11,6 +11,7 @@
 */
 $main_bg_color: #FFFFFF;
 $fatskill_main: #E42960;
+$light_grey_background: #C9C9C9;
 
 /**
   BORDERS
@@ -22,3 +23,10 @@ $border_grey: #D3D3D3;
 */
 $button_grey: $border_grey;
 $button_grey_border: #878787;
+
+/**
+  TEXT
+*/
+$white_text: $main_bg_color;
+$dark_text: #606c76;
+$red_text: $fatskill_main

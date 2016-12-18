@@ -1,0 +1,20 @@
+@import "../../application_wrapper/core";
+
+
+#Login{
+  padding-top:120px;
+
+
+  #input-wrapper{
+    max-width:600px;
+    width:100%;
+    margin:auto;
+
+    label{
+      i{
+        vertical-align: top;
+        margin-right:10px;
+      }
+    }
+  }
+}

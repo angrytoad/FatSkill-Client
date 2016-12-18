@@ -9,7 +9,12 @@ import { Route } from 'react-router';
  * break down components into their simplest forms.
  */
 import App from './app/application_wrapper/App';
+
+/**
+ * Root Components
+ */
 import Home from './app/route_components/home/Home';
+import Login from './app/route_components/login/Login';
 
 /**
  * Example Routes:
@@ -21,6 +26,7 @@ import Home from './app/route_components/home/Home';
 const routes = (
   <Route name="app" component={App} >
     <Route path="/" component={Home} />
+    <Route path="/login" component={Login} />
   </Route>
 );
 

@@ -13,11 +13,13 @@ const Header = React.createClass({
         <div className="container">
           <div className="row">
             <div className="column">
-              <img id="logo" src="/assets/logo.png" />
+              <Link to="/">
+                <img id="logo" src="/assets/logo.png" />
+              </Link>
             </div>
             <div className="column column-75">
               <ul id="menu">
-                <a href="#Features">
+                <a href="/#HomeMainContentFeatures">
                   <li>
                     <i className="material-icons">track_changes</i>
                     Features
