@@ -17,3 +17,17 @@ a{
   border: 0.1rem solid $border_grey;
   color:$fatskill_main;
 }
+
+input[type='email']:focus, input[type='number']:focus, input[type='password']:focus, input[type='search']:focus, input[type='tel']:focus, input[type='text']:focus, input[type='url']:focus, textarea:focus, select:focus{
+  border-color: $fatskill_main;
+}
+
+blockquote{
+  &.success{
+    border-left: 0.3rem solid $fatskill_green;
+  }
+
+  &.warning{
+    border-left: 0.3rem solid $fatskill_main;
+  }
+}

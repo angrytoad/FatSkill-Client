@@ -37,7 +37,7 @@ const Header = React.createClass({
                     Login
                   </li>
                 </Link>
-                <Link to="/">
+                <Link to="/register">
                   <li>
                     <button className="button button-black button-outline">
                       Free Trial
