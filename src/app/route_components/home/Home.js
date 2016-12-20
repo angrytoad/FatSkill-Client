@@ -12,7 +12,7 @@ const Home = (props) => {
       <Helmet
         title="Modernise Recruitment"
       />
-      <Header />
+      <Header pathname={props.location.pathname} />
       <HomeBanner />
       <HomeMainContent />
     </div>

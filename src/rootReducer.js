@@ -9,6 +9,11 @@ import { routerReducer } from 'react-router-redux';
 import { test } from './_examples/example_reducer';
 
 /**
+ * Routing Reducers
+ */
+import { hashPath } from './app/reusable/Header/reducers';
+
+/**
  * Registration Reducers
  */
 import { registrationRequestStatus } from './app/route_components/register/reducers';
@@ -21,7 +26,12 @@ import { registrationRequestStatus } from './app/route_components/register/reduc
  */
 const reducerList = {
   test,
-  
+
+  /**
+   * Routing
+   */
+  hashPath,
+
   /**
    * Registration Reducers
    */

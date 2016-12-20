@@ -9,6 +9,14 @@ import  '../reusable/resuable.scss';
 
 import './App.scss'
 
+import '../reusable/icons/android-chrome-192x192.png';
+import '../reusable/icons/android-chrome-256x256.png';
+import '../reusable/icons/apple-touch-icon.png';
+import '../reusable/icons/favicon-16x16.png';
+import '../reusable/icons/favicon-32x32.png';
+import '../reusable/icons/mstile-150x150.png';
+import '../reusable/icons/safari-pinned-tab.svg';
+import '../reusable/icons/manifest.json';
 
 /**
  * @author "Tom Freeborough"  <thomas@hotsnapper.com> (27 Jul 2016)

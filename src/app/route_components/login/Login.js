@@ -12,7 +12,7 @@ const Login = React.createClass({
         <Helmet
           title="Login to your account"
         />
-        <Header />
+        <Header pathname={this.props.location.pathname}/>
         <div className="animated fadeIn container">
           <form>
             <div id="input-wrapper">

@@ -41,7 +41,7 @@ const Register = React.createClass({
         <Helmet
           title="Register your account"
         />
-        <Header />
+        <Header pathname={this.props.location.pathname}/>
         <div className="animated fadeIn container">
           <form id="RegistrationForm" onSubmit={(e) => this.submitRegistrationForm(e)}>
             <div id="input-wrapper">

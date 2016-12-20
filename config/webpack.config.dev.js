@@ -71,7 +71,7 @@ module.exports = {
         loader: 'json'
       },
       {
-        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2|xml)$/,
         loader: 'file?name=assets/[name].[ext]',
       },
       {
