@@ -27,7 +27,7 @@ const HomeMainContentIntro = React.createClass({
             </Link>
           </div>
           <div className="img-column">
-            <img src="/assets/logo.png" />
+            <img src="/assets/logo_min.png" />
           </div>
         </div>
       </div>
