@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 import './Header.scss';
 
-import './logo.png';
+import './logo_min.png';
 
 const Header = React.createClass({
 
@@ -14,7 +14,7 @@ const Header = React.createClass({
           <div className="row">
             <div className="column">
               <Link to="/">
-                <img id="logo" src="/assets/logo.png" />
+                <img id="logo" src="/assets/logo_min.png" />
               </Link>
             </div>
             <div className="column column-75">

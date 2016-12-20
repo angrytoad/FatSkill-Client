@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import './home_banner.jpg';
-import './home_banner_colour.jpg';
+import './home_banner_colour_min.jpg';
 
 const HomeBanner = React.createClass({
 
