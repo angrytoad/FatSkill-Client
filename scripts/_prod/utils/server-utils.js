@@ -17,7 +17,7 @@ export function createPage(html, initialState) {
     </head>
     <body>
       <div id="root">${html}</div>
-      <script src="main.js"></script>
+      <script src="/main.js"></script>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
         </script>

@@ -26,7 +26,7 @@ const AccountActivationStatus = React.createClass({
                     <p className="failed animated fadeIn">Not Verified</p>
                     <blockquote className="warning">
                       <p>
-                        Unfortunately, we couldn't verify your account. Your token may be expired, please resend another token to your email.
+                        Unfortunately, we couldn't activate your account. Your token may be expired, please resend another token to your email.
                       </p>
                     </blockquote>
                   </div>
