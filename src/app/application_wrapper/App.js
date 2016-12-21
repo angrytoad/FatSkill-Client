@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import DevTools from '../../_dev/DevTools';
 
 const environment = process.env.NODE_ENV;
@@ -29,6 +30,9 @@ import '../reusable/icons/manifest.json';
 const App = (props) => {
   return (
     <div id="App">
+      <Helmet
+        titleTemplate="FatSkill | %s"
+      />
       {props.children}
       {environment === 'development'
         ?

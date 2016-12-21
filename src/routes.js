@@ -16,6 +16,7 @@ import App from './app/application_wrapper/App';
 import Home from './app/route_components/home/Home';
 import Login from './app/route_components/login/Login';
 import Register from './app/route_components/register/Register';
+import AccountActivation from './app/route_components/activate/AccountActivation';
 
 /**
  * Example Routes:
@@ -29,6 +30,7 @@ const routes = (
     <Route path="/" component={Home} />
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />
+    <Route path="/activate/:token" component={AccountActivation} />
   </Route>
 );
 

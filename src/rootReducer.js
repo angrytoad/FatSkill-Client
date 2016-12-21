@@ -17,6 +17,7 @@ import { hashPath } from './app/reusable/Header/reducers';
  * Registration Reducers
  */
 import { registrationRequestStatus } from './app/route_components/register/reducers';
+import { accountActivationStatus, accountActivationResendStatus } from './app/route_components/activate/reducers';
 
 /**
  * Add to the reducersList any reducers which are needed for the redux application, try to keep reducers separated
@@ -36,6 +37,8 @@ const reducerList = {
    * Registration Reducers
    */
   registrationRequestStatus,
+  accountActivationStatus,
+  accountActivationResendStatus,
 };
 
 reducerList.routing =  routerReducer;
