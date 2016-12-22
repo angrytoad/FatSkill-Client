@@ -6,7 +6,7 @@ export function createPage(html, initialState) {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta name="google-site-verification" content="oH2-pdxt6-v2NyaKHmDclskpQPEBCFtfllBz8lFfM04" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.4.6/bluebird.core.min.js" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.4.6/bluebird.core.min.js"></script>
       <title>Modernise Recruitment | Fatskill</title>  
       <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
       <link rel="icon" type="image/png" href="/assets/favicon-32x32.png" sizes="32x32">
