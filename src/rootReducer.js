@@ -12,12 +12,18 @@ import { test } from './_examples/example_reducer';
  * Routing Reducers
  */
 import { hashPath } from './app/reusable/Header/reducers';
+import { nextAuthRoute } from './app/route_components/dashboard/reducers';
 
 /**
  * Registration Reducers
  */
 import { registrationRequestStatus } from './app/route_components/register/reducers';
 import { accountActivationStatus, accountActivationResendStatus } from './app/route_components/activate/reducers';
+
+/**
+ * Login Reducers
+ */
+import { loginRequestStatus } from './app/route_components/login/reducers'
 
 /**
  * Add to the reducersList any reducers which are needed for the redux application, try to keep reducers separated
@@ -32,6 +38,7 @@ const reducerList = {
    * Routing
    */
   hashPath,
+  nextAuthRoute,
 
   /**
    * Registration Reducers
@@ -39,6 +46,11 @@ const reducerList = {
   registrationRequestStatus,
   accountActivationStatus,
   accountActivationResendStatus,
+
+  /**
+   * Login Reducers
+   */
+  loginRequestStatus,
 };
 
 reducerList.routing =  routerReducer;

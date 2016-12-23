@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const AccountActivationStatus = React.createClass({
 
@@ -6,7 +7,7 @@ const AccountActivationStatus = React.createClass({
     return (
       <div id="AccountActivationStatus">
         {
-          this.props.accountActivationStatus.success
+          !this.props.accountActivationStatus.success
           ?
             <div>
               <p className="success animated fadeIn">Verified</p>
@@ -16,6 +17,9 @@ const AccountActivationStatus = React.createClass({
                   dashboard.
                 </p>
               </blockquote>
+              <Link to="/dashboard">
+                <button className="button button-outline">My Dashboard</button>
+              </Link>
             </div>
           :
             <div>

@@ -71,7 +71,7 @@ const AccountActivation = React.createClass({
                 Hold on just a second while we activate your account, we'll let you know when you can go to your dashboard
               </p>
               <p>
-                You're activation token is:<br /> <strong>{this.props.params.token}</strong>
+                You're activation token is:<br /> <span className="activation_token"><strong>{this.props.params.token}</strong></span>
               </p>
               <div>
                 {

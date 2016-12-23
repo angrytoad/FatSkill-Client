@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
 /**
  * @author "Tom Freeborough"  <thomas@hotsnapper.com> (27 Jul 2016)
@@ -19,6 +19,12 @@ import Register from './app/route_components/register/Register';
 import AccountActivation from './app/route_components/activate/AccountActivation';
 
 /**
+ * Dashboard Components
+ */
+import Dashboard from './app/route_components/dashboard/Dashboard';
+import DashboardMain from './app/route_components/dashboard/DashboardMain/DashboardMain';
+
+/**
  * Example Routes:
  *
  *  <Route path="/" component={Home} />
@@ -31,6 +37,10 @@ const routes = (
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />
     <Route path="/activate/:token" component={AccountActivation} />
+
+    <Route name="dashboard" path="/dashboard" component={Dashboard}>
+      <IndexRoute component={DashboardMain} /> 
+    </Route>
   </Route>
 );
 

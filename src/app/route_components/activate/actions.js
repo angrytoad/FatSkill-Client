@@ -1,21 +1,24 @@
 import api_config from '../../../../config/api.config';
 
+import { setLoginToken } from '../login/actions';
+
 export const accountActivationRequestFailed = (error) => ({ type:'ACCOUNT_ACTIVATION_REQUEST_FAILED', data:error });
 export const accountActivationRequestSuccess = (error) => ({ type:'ACCOUNT_ACTIVATION_REQUEST_SUCCESS' });
 export const accountActivationRequestReset = (error) => ({ type:'ACCOUNT_ACTIVATION_REQUEST_RESET' });
 
 export const requestAccountActivation = (token) => {
   return dispatch => {
-    fetch(api_config.host + '/api/register/activate', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        token
+    if(typeof localStorage !== 'undefined') {
+      fetch(api_config.host + '/api/register/activate', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          token
+        })
       })
-    })
       .then(res => {
         let json = res.json();
         if (res.status >= 200 && res.status < 300) {
@@ -28,6 +31,8 @@ export const requestAccountActivation = (token) => {
 
         body.then(json => {
           dispatch(accountActivationRequestSuccess());
+          console.log('SETTING LOGIN TOKEN');
+          dispatch(setLoginToken(json.api_token));
         });
 
       })
@@ -35,6 +40,7 @@ export const requestAccountActivation = (token) => {
         //dispatch(accountActivationRequestSuccess());
         dispatch(accountActivationRequestFailed(err.message));
       });
+    }
   }
 };
 
