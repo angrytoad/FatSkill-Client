@@ -7,7 +7,7 @@ const AccountActivationStatus = React.createClass({
     return (
       <div id="AccountActivationStatus">
         {
-          !this.props.accountActivationStatus.success
+          this.props.accountActivationStatus.success
           ?
             <div>
               <p className="success animated fadeIn">Verified</p>
