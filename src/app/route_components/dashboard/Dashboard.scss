@@ -27,4 +27,15 @@
       color:$fatskill_main;
     }
   }
+
+
+  #DashboardMain{
+
+    .recharts-responsive-container{
+      max-width: 300px;
+      max-height: 300px;
+      margin: auto;
+    }
+
+  }
 }
