@@ -2,6 +2,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import UserHeader from '../../reusable/UserHeader/UserHeader';
+import DashboardHeader from '../../reusable/DashboardHeader/DashboardHeader';
+
+import './Dashboard.scss';
 
 const Dashboard = React.createClass({
 
@@ -12,6 +15,7 @@ const Dashboard = React.createClass({
           title="Dashboard"
         />
         <UserHeader />
+        <DashboardHeader />
         {this.props.children}
       </div>
     )

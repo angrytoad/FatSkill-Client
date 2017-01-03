@@ -21,8 +21,11 @@ const DashboardMain = React.createClass({
 
   render() {
     return (
-      <div id="DashboardMain" className="container">
-        <h1>Dashboard Main</h1>
+      <div id="DashboardMain" className="container dashboard-content">
+        <div className="dashboard-header">
+          <h1>Welcome to your dashboard</h1>
+        </div>
+
         <p>This is the main dashboard</p>
       </div>
     )

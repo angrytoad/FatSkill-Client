@@ -1,0 +1,39 @@
+@import "../../application_wrapper/core";
+
+#DashboardHeader{
+  background:$dark_grey_background;
+  box-shadow:0px 0px 5px $dark_grey_background;
+  margin-bottom:-50px;
+
+  ul{
+    text-align: center;
+    padding-top:50px;
+    padding-bottom:100px;
+
+    a{
+      color:$white_text;
+
+      &:hover{
+        color:$light_grey_background;
+      }
+
+      &.active{
+        li{
+          color:$fatskill_main;
+        }
+      }
+
+      li{
+        display:inline-block;
+        margin-left:40px;
+        margin-right:40px;
+        text-transform: capitalize;
+
+        i{
+          display:block;
+          font-size:5rem;
+        }
+      }
+    }
+  }
+}

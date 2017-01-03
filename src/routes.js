@@ -23,6 +23,10 @@ import AccountActivation from './app/route_components/activate/AccountActivation
  */
 import Dashboard from './app/route_components/dashboard/Dashboard';
 import DashboardMain from './app/route_components/dashboard/DashboardMain/DashboardMain';
+import DashboardFulfillment from './app/route_components/dashboard/DashboardFulfillment/DashboardFulfillment';
+import DashboardCandidates from './app/route_components/dashboard/DashboardCandidates/DashboardCandidates';
+import DashboardTests from './app/route_components/dashboard/DashboardTests/DashboardTests';
+import DashboardSettings from './app/route_components/dashboard/DashboardSettings/DashboardSettings';
 
 /**
  * Example Routes:
@@ -39,7 +43,11 @@ const routes = (
     <Route path="/activate/:token" component={AccountActivation} />
 
     <Route name="dashboard" path="/dashboard" component={Dashboard}>
-      <IndexRoute component={DashboardMain} /> 
+      <IndexRoute component={DashboardMain} />
+      <Route path="fulfillment" component={DashboardFulfillment} />
+      <Route path="candidates" component={DashboardCandidates} />
+      <Route path="tests" component={DashboardTests} />
+      <Route path="settings" component={DashboardSettings} />
     </Route>
   </Route>
 );
