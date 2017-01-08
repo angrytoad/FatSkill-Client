@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { Legend, Tooltip, ResponsiveContainer, PieChart, Pie, Text } from 'recharts';
+import { Legend, ResponsiveContainer, PieChart, Pie } from 'recharts';
 import moment from 'moment';
 
 import { getUserInformation } from '../actions';

@@ -28,6 +28,45 @@
     }
   }
 
+  .dashboard-breadcrumbs{
+
+    ul{
+      margin:0px;
+      margin-top:-10px;
+      margin-bottom:10px;
+    }
+
+    a{
+      li{
+
+        &::after{
+          content:'>';
+          margin-left:5px;
+        }
+
+        &:hover{
+          opacity:1;
+          cursor:pointer;
+        }
+      }
+    }
+
+    li{
+      opacity:0.7;
+      display:inline-block;
+      margin-right:5px;
+      cursor:default;
+    }
+
+
+  }
+
+  .dashboard-body{
+    .subtitle{
+      border-bottom:1px solid $border_grey;
+    }
+  }
+
 
   #DashboardMain{
 

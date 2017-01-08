@@ -26,6 +26,11 @@ import { accountActivationStatus, accountActivationResendStatus } from './app/ro
 import { loginRequestStatus } from './app/route_components/login/reducers'
 
 /**
+ * Fulfillment Reducers
+ */
+import { fulfillmentData, recentlyCreatedPositions } from './app/route_components/dashboard/DashboardFulfillment/reducers';
+
+/**
  * Add to the reducersList any reducers which are needed for the redux application, try to keep reducers separated
  * into their own files and not create one great big reducers file. One option is to create reducers
  * in accordance with their primary function. I.E having a reducer file to handle login ETC.
@@ -51,6 +56,12 @@ const reducerList = {
    * Login Reducers
    */
   loginRequestStatus,
+
+  /**
+   * Fulfillment Reducers
+   */
+  fulfillmentData,
+  recentlyCreatedPositions
 };
 
 reducerList.routing =  routerReducer;
