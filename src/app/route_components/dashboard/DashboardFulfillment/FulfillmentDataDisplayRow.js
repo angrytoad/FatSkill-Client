@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const FulfillmentDataDisplayRow = React.createClass({
 
@@ -20,7 +21,11 @@ const FulfillmentDataDisplayRow = React.createClass({
         <td>{this.props.row.company}</td>
         <td>{this.props.row.location}</td>
         <td>{this.props.row.expiry}</td>
-        <td>N/A</td>
+        <td>
+          <Link to={"/dashboard/fulfillment/positions/"+this.props.row.id}>
+            <i className="material-icons">remove_red_eye</i>
+          </Link>
+        </td>
       </tr>
     )
   }
