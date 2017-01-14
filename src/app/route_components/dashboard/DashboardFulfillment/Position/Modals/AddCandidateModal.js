@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import JsSearch from 'js-search';
+import Fuse from 'fuse.js';
 import serialize from 'form-serialize';
 
 import { getBasicCandidateList } from '../../../DashboardCandidates/actions';
@@ -21,11 +21,14 @@ const mapDispatchToProps = dispatch =>
 
 const AddCandidateModal = React.createClass({
 
-  JsSearch: new JsSearch.Search('isbn'),
+  Fuse: new Fuse(),
 
   getInitialState() {
     return ({
-      candidates: this.props.basicCandidateList
+      candidates: this.props.basicCandidateList,
+      options: {
+        keys: ['name', 'email', 'location']
+      }
     });
   },
 
@@ -40,11 +43,7 @@ const AddCandidateModal = React.createClass({
   },
 
   componentWillReceiveProps(nextProps){
-    this.JsSearch = new JsSearch.Search('isbn');
-    this.JsSearch.addIndex('name');
-    this.JsSearch.addIndex('email');
-    this.JsSearch.addIndex('location');
-    this.JsSearch.addDocuments(nextProps.basicCandidateList);
+    this.Fuse = new Fuse(nextProps.basicCandidateList, this.state.options);
     this.setState({
       candidates: nextProps.basicCandidateList
     })
@@ -58,7 +57,7 @@ const AddCandidateModal = React.createClass({
 
   searchCandidates(e){
     if(e.target.value.length > 0){
-      let results = this.JsSearch.search(e.target.value);
+      let results = this.Fuse.search(e.target.value);
       this.setState({
         candidates: results
       });
