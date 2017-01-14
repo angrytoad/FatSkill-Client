@@ -13,6 +13,19 @@ a{
   }
 }
 
+.no-select{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fatskill{
+  color:$fatskill_main!important;
+}
+
 .button.button-outline, button.button-outline, input[type='button'].button-outline, input[type='reset'].button-outline, input[type='submit'].button-outline{
   border: 0.1rem solid $border_grey;
   color:$fatskill_main;
@@ -30,4 +43,58 @@ blockquote{
   &.warning{
     border-left: 0.3rem solid $fatskill_main;
   }
+}
+
+select:focus{
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="#E42960" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>');
+}
+
+.animated.fast{
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.modal{
+  position: fixed;
+
+  &::before{
+    content: '';
+    position: fixed;
+    background:rgba(0,0,0,0.6);
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    z-index: 999998;
+  }
+
+  .modal-close{
+    position: absolute;
+    right:0;
+    top:0;
+    font-size:4rem;
+    cursor:pointer;
+
+    &:hover{
+      opacity:0.8;
+      color:$fatskill_main;
+    }
+  }
+
+  .modal-main{
+    border-radius:4px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width:600px;
+    width: 50%;
+    max-height: 50%;
+    padding:1rem;
+    position: fixed;
+    background:$white_text;
+    z-index: 999999;
+  }
+
 }

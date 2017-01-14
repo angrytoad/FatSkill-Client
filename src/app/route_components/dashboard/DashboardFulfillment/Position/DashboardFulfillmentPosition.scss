@@ -1,0 +1,111 @@
+@import "../../../../application_wrapper/core";
+
+#DashboardFulfillmentPosition{
+  #DashboardFulfillmentPositionHeader{
+    > .row{
+      > .column{
+        > div{
+          height:250px;
+          border-radius:4px;
+          box-shadow:0px 0px 5px $dark_grey_background;
+        }
+
+        .first{
+          background:$dark_grey_background;
+        }
+
+        .second{
+          background:$dark_grey_background;
+        }
+
+        .third{
+          background:$fatskill_main;
+        }
+
+        .text-wrap{
+          display:table;
+          width:100%;
+          color:$white_text;
+
+          > div{
+            display: table-cell;
+            vertical-align: middle;
+            padding:0 1.0rem;
+            text-align: center;
+          }
+
+          .large{
+            font-size:7rem;
+            line-height: 7rem;
+          }
+
+          .small{
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+  #DashboardFulfillmentPositionCandidates{
+    #DashboardFulfillmentPositionCandidatesFilter{
+      margin-top:2rem;
+
+      .filter-wrapper{
+        border-radius:4px;
+        display:inline-block;
+        width:100%;
+
+        select{
+          display:inline-block;
+          height: 40px;
+          margin:0px;
+          width: 250px;
+        }
+      }
+
+      .direction-swapper{
+        border-radius:4px;
+        border:1px solid $border_grey;
+        overflow:hidden;
+        margin-left:5px;
+        display:inline-block;
+        vertical-align: top;
+
+        .direction{
+          height:40px;
+          display:inline-block;
+          width:50px;
+          transition:all 0.2s;
+          position: relative;
+          vertical-align: top;
+          cursor:pointer;
+
+          &.active{
+            background:$fatskill_main;
+            color:$white_text;
+            transition:all 0.2s;
+          }
+
+          i{
+            font-size:4rem;
+            position: absolute;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+            line-height:40px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  #AddCandidateModal{
+    p{
+      margin-bottom:10px;
+      margin-top:15px;
+    }
+  }
+}

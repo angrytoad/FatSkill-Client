@@ -1,0 +1,9 @@
+@import "../../../application_wrapper/core";
+
+#DashboardFulfillment{
+  #FulfillmentDataDisplay{
+    .expired{
+      opacity:0.3;
+    }
+  }
+}

@@ -23,7 +23,7 @@ const FulfillmentDataDisplay = React.createClass({
           </tr>
         </thead>
         <tbody>
-        {rows}
+          {rows}
         </tbody>
       </table>
     )

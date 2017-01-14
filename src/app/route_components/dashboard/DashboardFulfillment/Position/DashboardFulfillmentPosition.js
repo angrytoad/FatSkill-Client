@@ -2,17 +2,26 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router';
 
-import { fetchPositionInformation, clearPositionInformation } from '../actions';
+import DashboardFulfillmentPositionCandidates from './DashboardFulfillmentPositionCandidates';
+import DashboardFulfillmentPositionHeader from './DashboardFulfillmentPositionHeader';
+import AddCandidateModal from './Modals/AddCandidateModal';
 
-const mapStateToProps = ({ selectedPosition }) =>
+import './DashboardFulfillmentPosition.scss';
+
+import { fetchPositionInformation, clearPositionInformation, openAddCandidateModal, closeAddCandidateModal } from '../actions';
+
+const mapStateToProps = ({ selectedPosition, addPositionCandidateModal }) =>
   ({
-    selectedPosition
+    selectedPosition,
+    addPositionCandidateModal
   });
 
 const mapDispatchToProps = dispatch =>
   ({
     fetchPositionInformation: (id) => dispatch(fetchPositionInformation(id)),
-    clearPositionInformation: () => dispatch(clearPositionInformation())
+    clearPositionInformation: () => dispatch(clearPositionInformation()),
+    openAddCandidateModal: () => dispatch(openAddCandidateModal()),
+    closeAddCandidateModal: () => dispatch(closeAddCandidateModal())
   });
 
 const DashboardFulfillmentPosition = React.createClass({
@@ -23,6 +32,14 @@ const DashboardFulfillmentPosition = React.createClass({
 
   componentWillUnmount() {
     this.props.clearPositionInformation();
+  },
+
+  onOpenAddCandidateModal() {
+    this.props.openAddCandidateModal();
+  },
+
+  onCloseAddCandidateModal() {
+    this.props.closeAddCandidateModal();
   },
 
   render() {
@@ -47,12 +64,32 @@ const DashboardFulfillmentPosition = React.createClass({
                 </ul>
               </div>
               <div className="dashboard-body">
-                This position currently has <strong>{this.props.selectedPosition.candidate_count}</strong> candidates.
+                <div className="row">
+                  <DashboardFulfillmentPositionHeader
+                    position={this.props.selectedPosition}
+                    openAddCandidateModal={this.onOpenAddCandidateModal}
+                  />
+                </div>
+                <div className="row">
+                  <DashboardFulfillmentPositionCandidates
+                    candidates={this.props.selectedPosition.candidates}
+                  />
+                </div>
               </div>
+              {
+                this.props.addPositionCandidateModal.open
+                  ?
+                  <AddCandidateModal
+                    position={this.props.selectedPosition}
+                    closeAddCandidateModal={this.onCloseAddCandidateModal}
+                  />
+                  :
+                  false
+              }
             </div>
           :
             <div>
-              <p>Loading...</p>
+              <p>Loading...</p> 
             </div>
         }
       </div>

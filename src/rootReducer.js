@@ -28,7 +28,12 @@ import { loginRequestStatus } from './app/route_components/login/reducers'
 /**
  * Fulfillment Reducers
  */
-import { fulfillmentData, recentlyCreatedPositions, selectedPosition } from './app/route_components/dashboard/DashboardFulfillment/reducers';
+import { fulfillmentData, recentlyCreatedPositions, selectedPosition, addPositionCandidateModal } from './app/route_components/dashboard/DashboardFulfillment/reducers';
+
+/**
+ * Candidate Reducers
+ */
+import { basicCandidateList } from './app/route_components/dashboard/DashboardCandidates/reducers';
 
 /**
  * Add to the reducersList any reducers which are needed for the redux application, try to keep reducers separated
@@ -62,7 +67,13 @@ const reducerList = {
    */
   fulfillmentData,
   recentlyCreatedPositions,
-  selectedPosition
+  selectedPosition,
+  addPositionCandidateModal,
+
+  /**
+   * Candidate Reducers
+   */
+  basicCandidateList
 };
 
 reducerList.routing =  routerReducer;
