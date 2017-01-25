@@ -28,8 +28,10 @@ import DashboardFulfillment from './app/route_components/dashboard/DashboardFulf
 import DashboardFulfillmentCreate from './app/route_components/dashboard/DashboardFulfillment/Create/DashboardFulfillmentCreate';
 import DashboardFulfillmentPosition from './app/route_components/dashboard/DashboardFulfillment/Position/DashboardFulfillmentPosition';
 
-import DashboardCandidates from './app/route_components/dashboard/DashboardCandidates/DashboardCandidates';
 import DashboardTests from './app/route_components/dashboard/DashboardTests/DashboardTests';
+import DashboardTestsCreate from './app/route_components/dashboard/DashboardTests/Create/DashboardTestsCreate';
+
+import DashboardCandidates from './app/route_components/dashboard/DashboardCandidates/DashboardCandidates';
 import DashboardSettings from './app/route_components/dashboard/DashboardSettings/DashboardSettings';
 
 /**
@@ -54,7 +56,10 @@ const routes = (
       <Route path="fulfillment/positions/:position_id" component={DashboardFulfillmentPosition} />
 
       <Route path="candidates" component={DashboardCandidates} />
+      
       <Route path="tests" component={DashboardTests} />
+      <Route path="tests/create" component={DashboardTestsCreate} />
+      
       <Route path="settings" component={DashboardSettings} />
     </Route>
   </Route>

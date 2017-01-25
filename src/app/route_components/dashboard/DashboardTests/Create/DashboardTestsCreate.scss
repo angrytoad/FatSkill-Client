@@ -1,0 +1,49 @@
+@import "../../../../application_wrapper/core";
+
+#DashboardTestsCreate{
+  #test-creation-help-column{
+    .step{
+      border-bottom:1px solid $border_grey;
+      margin-bottom:1rem;
+      padding-bottom:1rem;
+
+      .title{
+        text-align: right;
+        display:block;
+        font-weight: bold;
+        font-size:2rem;
+
+        > span{
+          background:$fatskill_main;
+          display:inline-block;
+          padding:0px 1rem;
+          text-align: center;
+          color:$white_text;
+          border-radius:4px;
+        }
+      }
+
+      .body{
+        display:table;
+        margin:0px;
+
+        i{
+          font-size:6rem;
+          display:table-cell;
+          vertical-align: middle;
+          color:$fatskill_main;
+        }
+
+        > span{
+          display:table-cell;
+          vertical-align: middle;
+          padding-left:2rem;
+
+          > span{
+
+          }
+        }
+      }
+    }
+  }
+}

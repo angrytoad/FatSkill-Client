@@ -24,6 +24,11 @@ const DashboardTests = React.createClass({
             <li>Test Bench</li>
           </ul>
         </div>
+        <div className="test-header">
+          <Link to="/dashboard/tests/create">
+            <button className="button button-black button-outline">New Test</button>
+          </Link>
+        </div>
         <p>
           This is the test management page
         </p>
