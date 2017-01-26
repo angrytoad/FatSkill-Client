@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router';
+import serialize from 'form-serialize';
 
 import { sendCreationRequest } from './actions';
 
@@ -18,9 +19,39 @@ const mapDispatchToProps = dispatch =>
 
 const DashboardTestsCreate = React.createClass({
 
+  getInitialState() {
+    return({
+      descriptionWords: 0
+    });
+  },
+
+  handleUpdateDescriptionWords(e) {
+    let string = e.target.value;
+    let count = string.split(' ').length-1;
+    this.setState({
+      descriptionWords: count
+    });
+  },
+
+  handleShowHelp(e) {
+    let type = e.target.dataset.help;
+    let element = document.getElementById(type);
+    element.classList.add('show');
+  },
+
+  handleHideHelp(e) {
+    let type = e.target.dataset.help;
+    let element = document.getElementById(type);
+    element.classList.remove('show');
+  },
+
   handleProcessCreationForm(e) {
     e.preventDefault();
-
+    let form = document.querySelector('#create-test-form');
+    let data = serialize(form, { hash:true });
+    if(typeof data.name !== 'undefined' && typeof data.description !== 'undefined' && typeof data.public !== 'undefined'){
+      this.props.sendCreationRequest(data);
+    }
   },
 
   render() {
@@ -41,9 +72,58 @@ const DashboardTestsCreate = React.createClass({
           </ul>
         </div>
         <div className="test-body row">
-          <div className="column">
+          <div id="test-creation-form-column" className="column">
             <h5>Get Started</h5>
-            <p>Fill out the details below to get started.</p> 
+            <p>Fill out the details below to get started.</p>
+            <form id="create-test-form" onSubmit={this.handleProcessCreationForm}>
+              <div>
+                <label htmlFor="name">
+                  <div>
+                    <i className="material-icons" data-help="title-help" onMouseOver={this.handleShowHelp} onMouseLeave={this.handleHideHelp}>help</i>
+                    <div id="title-help" className="input-help">
+                      <p>Once you have given your test a title, you will be unable to change it, this is to ensure consistency and minimal confusion for candidates.</p>
+                    </div>
+                  </div>
+
+                  Title
+                </label>
+                <input name="name" type="text" />
+              </div>
+              <div>
+                <label htmlFor="name">
+                  <div>
+                    <i className="material-icons" data-help="description-help" onMouseOver={this.handleShowHelp} onMouseLeave={this.handleHideHelp}>help</i>
+                    <div id="description-help" className="input-help">
+                      <p>
+                        Your test description should aim to introduce and give a brief overview of the test your candidate will take, you can use the test description
+                        to let candidates know what type of questions they will be answering or any other information.
+                      </p>
+                    </div>
+                  </div>
+                  Description ({this.state.descriptionWords} words)
+                </label>
+                <textarea name="description" onChange={this.handleUpdateDescriptionWords}/>
+              </div>
+              <div>
+                <input type="checkbox" defaultChecked={true} name="public" />
+                <span>
+                  <div>
+                    <i className="material-icons" data-help="public-help" onMouseOver={this.handleShowHelp} onMouseLeave={this.handleHideHelp}>help</i>
+                    <div id="public-help" className="input-help">
+                      <p>
+                        Setting your test to public means that we may select your test as part of our premium selection list, as more high quality tests are
+                        added to FatSkill, we want to offer comprehensive and well made tests for other users to use. In return for allowing your test
+                        to be public, we will include prominent credit for your organisation on the test.
+                      </p>
+                    </div>
+                  </div>
+                  Public
+                </span>
+              </div>
+              <div>
+                <button className="button button-black button-outline">Create Test</button>
+              </div>
+            </form>
           </div>
           <div id="test-creation-help-column" className="column">
             <h5>Need Help?</h5>

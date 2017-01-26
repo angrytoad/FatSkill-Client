@@ -46,4 +46,78 @@
       }
     }
   }
+
+  #test-creation-form-column{
+    #create-test-form{
+      textarea{
+        resize:none;
+        height:200px;
+      }
+
+      input[type="checkbox"]{
+        height:32px;
+        width:32px;
+      }
+
+      >div{
+        span{
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-bottom: .5rem;
+          vertical-align: top;
+          margin-top: 6px;
+          display: inline-block;
+          margin-left: 10px;
+
+          i{
+            vertical-align: top;
+            margin-top:0px;
+            cursor:pointer;
+            margin-right:5px;
+          }
+
+          div{
+            display:inline-block;
+            position:relative;
+          }
+        }
+
+        label{
+          i{
+            vertical-align: top;
+            margin-top:0px;
+            cursor:pointer;
+            margin-right:5px;
+          }
+
+          div{
+            display:inline-block;
+            position:relative;
+          }
+        }
+
+        .input-help{
+          display:none;
+
+          &.show{
+            display:block;
+            position: absolute;
+            font-weight:300;
+            width:400px;
+            color:$white_text;
+            background:$dark_grey_background;
+            opacity:0.8;
+            z-index: 999;
+            padding:10px 15px;
+            border-radius:4px;
+            font-size:1.3rem;
+          }
+
+          p{
+            margin:0px;
+          }
+        }
+      }
+    }
+  }
 }

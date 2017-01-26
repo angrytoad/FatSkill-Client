@@ -31,7 +31,7 @@ export const sendCreationRequest = (formData) => {
       .then(({body, token}) => {
 
         body.then(json => {
-          console.log('sendCreationRequest was successfully called');
+          browserHistory.push("/dashboard/tests/view/"+json.uuid);
         });
 
       })
