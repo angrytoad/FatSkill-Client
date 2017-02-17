@@ -30,6 +30,8 @@ import DashboardFulfillmentPosition from './app/route_components/dashboard/Dashb
 
 import DashboardTests from './app/route_components/dashboard/DashboardTests/DashboardTests';
 import DashboardTestsCreate from './app/route_components/dashboard/DashboardTests/Create/DashboardTestsCreate';
+import DashboardTestView from './app/route_components/dashboard/DashboardTests/View/DashboardTestView';
+import DashboardRevisionsCreate from './app/route_components/dashboard/DashboardTests/Revisions/Create/DashboardRevisionsCreate';
 
 import DashboardCandidates from './app/route_components/dashboard/DashboardCandidates/DashboardCandidates';
 import DashboardSettings from './app/route_components/dashboard/DashboardSettings/DashboardSettings';
@@ -59,6 +61,8 @@ const routes = (
       
       <Route path="tests" component={DashboardTests} />
       <Route path="tests/create" component={DashboardTestsCreate} />
+      <Route path="tests/view/:test_id" component={DashboardTestView} /> 
+      <Route path="tests/view/:test_id/revision/new" component={DashboardRevisionsCreate} />
       
       <Route path="settings" component={DashboardSettings} />
     </Route>

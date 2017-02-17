@@ -2,15 +2,38 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router';
 
-const mapStateToProps = ({test}) =>
-  ({});
+import { getTestsData } from './actions';
+
+import TestsDataDisplay from './TestsDataDisplay';
+
+import './DashboardTests.scss';
+import './Revisions/DashboardRevisions.scss';
+
+const mapStateToProps = ({ testsData }) =>
+  ({
+    testsData
+  });
 
 const mapDispatchToProps = dispatch =>
-  ({});
+  ({
+    getTestsData: () => dispatch(getTestsData())
+  });
 
 const DashboardTests = React.createClass({
 
+  componentDidMount() {
+    this.props.getTestsData();
+  },
+
   render() {
+
+    let revisionCount = 0;
+    let responseRate = 0;
+
+    for(let i=0; i<this.props.testsData.length; i++){
+      revisionCount += this.props.testsData[i].revisions.length;
+    }
+
     return (
       <div id="DashboardTests" className="container dashboard-content">
         <div className="dashboard-header">
@@ -29,9 +52,47 @@ const DashboardTests = React.createClass({
             <button className="button button-black button-outline">New Test</button>
           </Link>
         </div>
-        <p>
-          This is the test management page
-        </p>
+        <div className="row" id="DashboardTestsHeader">
+          <div className="column">
+            <div className="block">
+              <div className="block-child">
+                <div>
+                  <span className="large">{this.props.testsData.length}</span>
+                </div>
+                <div>
+                  <span className="small">tests</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="column">
+            <div className="block">
+              <div className="block-child">
+                <div>
+                  <span className="large">{revisionCount}</span>
+                </div>
+                <div>
+                  <span className="small">Revisions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="column">
+            <div className="block last">
+              <div className="block-child">
+                <div>
+                  <span className="large">{responseRate}%</span>
+                </div>
+                <div>
+                  <span className="small">Average Response Rate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <TestsDataDisplay 
+          testsData={this.props.testsData}
+        />
       </div>
     )
   }

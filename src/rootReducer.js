@@ -36,6 +36,18 @@ import { fulfillmentData, recentlyCreatedPositions, selectedPosition, addPositio
 import { basicCandidateList } from './app/route_components/dashboard/DashboardCandidates/reducers';
 
 /**
+ * Test Reducers
+ */
+import { currentGeneratedTest } from './app/route_components/dashboard/DashboardTests/Create/reducers';
+import { currentLoadedTest } from './app/route_components/dashboard/DashboardTests/View/reducers';
+import { testsData } from './app/route_components/dashboard/DashboardTests/reducers';
+
+/**
+ * Revision Reducers
+ */
+import { currentGeneratedRevision } from './app/route_components/dashboard/DashboardTests/Revisions/Create/reducers';
+
+/**
  * Add to the reducersList any reducers which are needed for the redux application, try to keep reducers separated
  * into their own files and not create one great big reducers file. One option is to create reducers
  * in accordance with their primary function. I.E having a reducer file to handle login ETC.
@@ -73,7 +85,19 @@ const reducerList = {
   /**
    * Candidate Reducers
    */
-  basicCandidateList
+  basicCandidateList,
+
+  /**
+   * Test Reducers
+   */
+  currentGeneratedTest,
+  currentLoadedTest,
+  testsData,
+
+  /**
+   * Revision Reducers
+   */
+  currentGeneratedRevision,
 };
 
 reducerList.routing =  routerReducer;

@@ -2,24 +2,19 @@ import api_config from '../../../../../../config/api.config';
 import { browserHistory } from 'react-router';
 
 export const setNextAuthRoute = (nextRoute) => ({ type:'SET_NEXT_AUTH_ROUTE', route:nextRoute });
-export const setCurrentGeneratedTest = (test) => ({ type:'SET_CURRENT_GENERATED_TEST', test });
-export const clearCurrentGeneratedTest = () => ({ type:'CLEAR_CURRENT_GENERATED_TEST' });
+export const setCurrentLoadedTest = (test) => ({ type:'SET_CURRENT_LOADED_TEST', test });
 
-export const sendCreationRequest = (formData) => {
+export const getCurrentLoadedTest = (uuid) => {
   return dispatch => {
-    
-    dispatch(setCurrentGeneratedTest(formData));
-    
    if(typeof localStorage !== 'undefined') {
     let token = JSON.parse(localStorage.getItem('fs_api_t'));
-    fetch(api_config.host + '/api/tests/create', {
-      method: 'POST',
+    fetch(api_config.host + '/api/tests/view/'+uuid, {
+      method: 'GET',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': (token !== null ? token.value : '')
       },
-      body: JSON.stringify(formData)
     })
       .then(res => {
         let json = res.json();
@@ -36,7 +31,9 @@ export const sendCreationRequest = (formData) => {
       .then(({body, token}) => {
 
         body.then(json => {
-          browserHistory.push("/dashboard/tests/view/"+json.uuid);
+          let test = json.test;
+          test.revisions = json.revisions;
+          dispatch(setCurrentLoadedTest(test));
         });
 
       })
@@ -47,3 +44,4 @@ export const sendCreationRequest = (formData) => {
   }
 };
 
+export const clearCurrentLoadedTest = () => ({ type:'CLEAR_CURRENT_LOADED_TEST' });

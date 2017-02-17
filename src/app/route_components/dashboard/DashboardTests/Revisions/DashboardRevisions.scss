@@ -1,0 +1,114 @@
+@import "../../../../application_wrapper/core";
+
+#DashboardRevisionsCreate{
+  #RevisionCreationIntro{
+
+    #create-revision-form{
+      textarea{
+        resize: none;
+        height:120px;
+      }
+    }
+
+    label{
+      i{
+        vertical-align: top;
+        margin-top:0px;
+        cursor:pointer;
+        margin-right:5px;
+      }
+
+      div{
+        display:inline-block;
+        position:relative;
+      }
+    }
+
+    .input-help{
+      display:none;
+
+      &.show{
+        display:block;
+        position: absolute;
+        font-weight:300;
+        width:400px;
+        color:$white_text;
+        background:$dark_grey_background;
+        opacity:0.8;
+        z-index: 999;
+        padding:10px 15px;
+        border-radius:4px;
+        font-size:1.3rem;
+      }
+
+      p{
+        margin:0px;
+      }
+    }
+  }
+
+  #RevisionCreationEditor{
+    #RevisionCreationSummary{
+      border:1px solid $border_grey;
+      padding:1rem;
+      border-radius:4px;
+      min-height:150px;
+      display:table;
+      width:100%;
+
+      strong{
+        color:$fatskill_main;
+      }
+
+      .row{
+        margin-bottom:0px;
+
+        .column:first-child{
+          border-right:1px solid $border_grey;
+
+          @media screen and (max-width: 640px) {
+            &{
+              border-right:none;
+            }
+          }
+        }
+      }
+
+      label{
+        i{
+          vertical-align: top;
+          margin-top:0px;
+          cursor:pointer;
+          margin-left:5px;
+        }
+
+        div{
+          display:inline-block;
+          position:relative;
+        }
+      }
+
+      .input-help{
+        display:none;
+
+        &.show{
+          display:block;
+          position: absolute;
+          font-weight:300;
+          width:400px;
+          color:$white_text;
+          background:$dark_grey_background;
+          opacity:0.8;
+          z-index: 999;
+          padding:10px 15px;
+          border-radius:4px;
+          font-size:1.3rem;
+        }
+
+        span{
+          margin:0px;
+        }
+      }
+    }
+  }
+}

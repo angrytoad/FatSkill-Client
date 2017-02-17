@@ -1,0 +1,39 @@
+@import "../../../application_wrapper/core";
+
+
+#DashboardTests{
+
+  #DashboardTestsHeader{
+    height:250px;
+
+    .block{
+      background:$dark_grey_background;
+      padding:20px;
+      color:$white_text;
+      height:100%;
+      display:table;
+      width:100%;
+
+      &.last{
+        background:$fatskill_main;
+      }
+
+      .block-child{
+        display: table-cell;
+        vertical-align: middle;
+        padding:0 1.0rem;
+        text-align: center;
+      }
+
+      .large{
+        font-size:7rem;
+        line-height: 7rem;
+      }
+
+      .small{
+        text-transform: uppercase;
+      }
+    }
+
+  }
+}
