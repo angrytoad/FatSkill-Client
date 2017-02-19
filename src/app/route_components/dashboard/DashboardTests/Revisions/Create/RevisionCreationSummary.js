@@ -10,18 +10,20 @@ const RevisionCreationSummary = React.createClass({
 
   componentWillReceiveProps(nextProps){
     if(nextProps.revision){
-      let type_array = [];
+      let type_array = {};
       nextProps.revision.questions.forEach((item, index) => {
-        if(!(item in type_array)){
-          type_array.push(item);
+        if(!type_array.hasOwnProperty(item.type)){
+          type_array[item.type] = 0;
+        }else {
+          type_array[item.type] += 1;
         }
       });
 
-      if(type_array.length <= 1){
+      if(Object.keys(type_array).length <= 1){
         this.setState({
           variation_score: "Poor"
         });
-      }else if(type_array.length <= 4){
+      }else if(Object.keys(type_array).length <= 3){
         this.setState({
           variation_score: "Average"
         });

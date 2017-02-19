@@ -110,5 +110,64 @@
         }
       }
     }
+
+    #RevisionCreationQuestionPicker{
+      padding-top:1rem;
+      padding-bottom:1rem;
+
+      .question{
+        border-radius:4px;
+        border:1px solid $border_grey;
+        width:100%;
+        padding:1rem;
+        position: relative;
+        height:120px;
+        cursor:pointer;
+
+        &:hover{
+          border:1px solid $fatskill_main;
+        }
+
+        .title{
+          font-weight:bold;
+        }
+
+        .description{
+          padding-right:50px;
+          font-size:1.1rem;
+
+          @media screen and (max-width:1024px) and (min-width: $phone_max){
+            &{
+              display:none;
+            }
+          }
+        }
+
+        i{
+          font-size:5rem;
+          position: absolute;
+          opacity:1;
+          bottom:10px;
+          right:10px;
+          color: $fatskill_main;
+        }
+      }
+    }
+
+    #RevisionCreationQuestionLister{
+      .mover{
+        width:32px;
+        color:$fatskill_main;
+      }
+
+      .title{
+        font-weight:bold;
+
+        &:hover{
+          text-decoration: underline;
+          cursor:pointer;
+        }
+      }
+    }
   }
 }

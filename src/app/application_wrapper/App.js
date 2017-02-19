@@ -32,6 +32,9 @@ const App = (props) => {
     <div id="App">
       <Helmet
         titleTemplate="FatSkill | %s"
+        link={[
+          {rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"}
+        ]}
       />
       {props.children}
       {environment === 'development'
