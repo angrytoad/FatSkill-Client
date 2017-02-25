@@ -11,6 +11,12 @@ a{
   &:hover{
     color:$main_bg_color;
   }
+
+  &.disabled{
+    color:$border_grey!important;
+    border: 0.1rem solid #D3D3D3!important;
+    cursor:default!important;
+  }
 }
 
 .no-select{
@@ -94,13 +100,17 @@ textarea{
     transform: translate(-50%, -50%);
     min-width:600px;
     width: 50%;
-    max-height: 50%;
+    max-height: 80%;
     padding:1rem;
     position: fixed;
     background:$white_text;
     z-index: 999999;
   }
+}
 
+.hidden-input{
+   border:none!important;
+  border-radius:0px;
 }
 
 .rotate-90{

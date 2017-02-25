@@ -34,8 +34,23 @@ export const currentGeneratedRevision = (state, action) => {
         }
       }
       return state;
-
+    case 'BULK_UPDATE_CURRENT_GENERATED_REVISION_QUESTIONS':
+      return {
+        ...state,
+        questions: action.questions
+      };
     default:
       return state || false;
   }
 };
+
+export const currentEditedQuestion = (state, action) => {
+  switch ( action.type ) {
+    case 'SET_CURRENT_EDITED_QUESTION':
+      return action.question;
+    case 'CLEAR_CURRENT_EDITED_QUESTION':
+      return false;
+    default:
+      return state || false;
+  }
+}

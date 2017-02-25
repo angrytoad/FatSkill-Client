@@ -26,7 +26,7 @@ const DashboardRevisionsCreate = React.createClass({
 
   componentDidMount() {
     this.props.getCurrentLoadedTest(this.props.params.test_id);
-    this.props.mockRevision();
+    //this.props.mockRevision();
   },
 
   componentWillUnmount() {
@@ -56,7 +56,7 @@ const DashboardRevisionsCreate = React.createClass({
         {
           this.props.currentGeneratedRevision
           ?
-            <RevisionCreationEditor />
+            <RevisionCreationEditor test_id={this.props.params.test_id} />
           :
             <RevisionCreationIntro name={this.props.currentLoadedTest.name} />
         }

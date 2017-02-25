@@ -162,10 +162,103 @@
 
       .title{
         font-weight:bold;
+        width:350px;
 
         &:hover{
           text-decoration: underline;
           cursor:pointer;
+        }
+      }
+
+      .type{
+        width:190px;
+      }
+
+      tr{
+        td:last-child{
+          width:64px;
+          text-align: center;
+
+          i{
+            &:hover{
+              color:$fatskill_main;
+              cursor:pointer;
+            }
+          }
+        }
+      }
+    }
+
+    #CurrentEditedQuestionModal{
+      #edited-question-title{
+        font-size:2rem;
+        padding:0px;
+        resize: none;
+        overflow: hidden;
+        min-height: 38px;
+        margin:0px;
+        width:calc(100% - 32px);
+
+        &:focus{
+          color:$fatskill_main;
+        }
+      }
+
+      #edited-question-description{
+        padding:0px;
+        font-size:1.6rem;
+        resize: none;
+        overflow: hidden;
+        min-height: 38px;
+        margin:0px;
+
+        &:focus{
+          color:$fatskill_main
+        }
+      }
+
+      #LongTextAnswer{
+        textarea{
+          padding:1rem;
+          font-size:1.6rem;
+          resize: none;
+          overflow: hidden;
+          min-height: 100px;
+          max-height:500px;
+          margin:0px;
+        }
+      }
+
+      .answer-table-wrapper{
+        position: relative;
+      }
+
+      .answer-table-scroll{
+        max-height:400px;
+        overflow:auto;
+
+        td:not(:first-child),th:not(:first-child){
+          text-align: center;
+        }
+
+        td:nth-child(2),th:nth-child(2){
+          width:64px;
+        }
+
+        td:last-child,th:last-child{
+          width:64px;
+        }
+
+        td:last-child i{
+          &:hover{
+            color:$fatskill_main;
+            cursor:pointer;
+          }
+        }
+
+        input{
+          margin-top:0;
+          margin-bottom:0;
         }
       }
     }

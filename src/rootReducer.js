@@ -45,7 +45,7 @@ import { testsData } from './app/route_components/dashboard/DashboardTests/reduc
 /**
  * Revision Reducers
  */
-import { currentGeneratedRevision } from './app/route_components/dashboard/DashboardTests/Revisions/Create/reducers';
+import { currentGeneratedRevision, currentEditedQuestion } from './app/route_components/dashboard/DashboardTests/Revisions/Create/reducers';
 
 /**
  * Add to the reducersList any reducers which are needed for the redux application, try to keep reducers separated
@@ -98,6 +98,7 @@ const reducerList = {
    * Revision Reducers
    */
   currentGeneratedRevision,
+  currentEditedQuestion,
 };
 
 reducerList.routing =  routerReducer;

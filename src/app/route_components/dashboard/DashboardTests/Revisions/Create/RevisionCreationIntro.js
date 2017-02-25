@@ -86,7 +86,7 @@ const RevisionCreationIntro = React.createClass({
                 <textarea name="description" onChange={this.handleUpdateDescriptionWords}/>
               </div>
               <div>
-                <button className="button button-black button-outline">Create Test</button>
+                <button className="button button-black button-outline">Create Revision</button>
               </div>
             </form>
           </div>

@@ -1,7 +1,20 @@
+/* eslint-disable */
 import React from 'react';
 import Dragula from 'react-dragula';
 
 const RevisionCreationQuestionLister = React.createClass({
+
+  mapNewQuestionOrder() {
+    let currentMapping = [];
+    let rows = document.querySelectorAll('#RevisionCreationQuestionLister tbody tr');
+    console.log(rows);
+    for(let i=0; i<rows.length; i++){
+      let row = rows[i];
+      let id = row.dataset.id;
+      currentMapping.push(id);
+    }
+    this.props.onUpdateQuestionOrdering(currentMapping, this.props.revision.questions);
+  },
 
   render() {
 
@@ -9,9 +22,21 @@ const RevisionCreationQuestionLister = React.createClass({
         return (
           <tr key={index} className="no-select" data-id={element.id}>
             <td className="mover"><i className="fa fa-arrows" aria-hidden="true" /></td>
-            <td className="title">{element.name}</td>
+            <td className="title" onClick={() => this.props.onOpenEditQuestion(element)}>{element.name}</td>
             <td>{element.description}</td>
-            <td>{element.formattedType}</td>
+            <td className="type">
+              {element.formattedType}
+              &nbsp;
+              {
+                element.type === 'single-choice' || element.type === 'multiple-choice'
+                ?
+                  <span>
+                    ({element.answers.length})
+                  </span>
+                :
+                  false
+              }
+            </td>
             <td>
               <i className="fa fa-trash-o" 
               aria-hidden="true" 
@@ -22,7 +47,7 @@ const RevisionCreationQuestionLister = React.createClass({
     })
 
     return (
-      <div id="RevisionCreationQuestionLister">
+      <div id="RevisionCreationQuestionLister" className="no-select">
         <table>
           <thead>
             <tr>
@@ -48,7 +73,11 @@ const RevisionCreationQuestionLister = React.createClass({
           return handle.classList.contains('fa-arrows');
         },
       };
-      Dragula([componentBackingInstance], options);
+      let drake = Dragula([componentBackingInstance], options);
+      drake.on('drop', (el, target, source, sibling) => {
+        this.mapNewQuestionOrder();
+        drake.cancel(true);
+      })
     }
   }
 

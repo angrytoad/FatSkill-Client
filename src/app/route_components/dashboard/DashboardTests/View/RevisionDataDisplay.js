@@ -20,18 +20,33 @@ const RevisionDataDisplay = React.createClass({
       )
     }else{
       return (
-        <table id="RevisionDataDisplay">
-          <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Created</th>
-          </tr>
-          </thead>
-          <tbody>
-          {rows}
-          </tbody>
-        </table>
+        <div className="column"> 
+          <div className="row">
+            <div className="column">
+              <Link to={"/dashboard/tests/view/"+this.props.test.id+"/revision/new"}>
+                <button className="button button-outline">Create a new revision</button>
+              </Link>
+            </div>
+          </div>
+          <div className="row">
+            <div className="column">
+              <table id="RevisionDataDisplay">
+                <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Created</th>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                {rows}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       )
     }
 

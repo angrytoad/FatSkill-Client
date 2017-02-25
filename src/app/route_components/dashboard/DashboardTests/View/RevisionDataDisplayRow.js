@@ -8,7 +8,7 @@ const RevisionDataDisplayRow = React.createClass({
     return (
       <tr className="RevisionDataDisplayRow">
         <td>{this.props.row.title}</td>
-        <td>{this.props.row.description}</td>
+        <td className="description">{this.props.row.description}</td>
         <td>{moment(this.props.row.created_at).format('ddd Do MMM YYYY')}</td>
         <td>0%</td>
         <td>
