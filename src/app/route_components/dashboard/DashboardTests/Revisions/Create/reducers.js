@@ -9,13 +9,12 @@ export const currentGeneratedRevision = (state, action) => {
     case 'MOCK_CURRENT_GENERATED_REVISION':
       return action.revision;
     case 'ADD_QUESTION_TO_CURRENT_GENERATED_REVISION':
-      return {
-        ...state,
+      return Object.assign({}, state, {
         questions: [
           ...state.questions,
           action.question
         ]
-      };
+      });
     case 'REMOVE_QUESTION_FROM_CURRENT_GENERATED_REVISION':
       let index = false;
       for(let i=0; i<state.questions.length; i++){
@@ -25,13 +24,12 @@ export const currentGeneratedRevision = (state, action) => {
       }
 
       if(index !== false){
-        return {
-          ...state,
+        return Object.assign({}, state, {
           questions: [
             ...state.questions.slice(0, index),
             ...state.questions.slice(index+1)
           ]
-        }
+        });
       }
       return state;
     case 'BULK_UPDATE_CURRENT_GENERATED_REVISION_QUESTIONS':
