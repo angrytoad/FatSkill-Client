@@ -33,10 +33,9 @@ export const currentGeneratedRevision = (state, action) => {
       }
       return state;
     case 'BULK_UPDATE_CURRENT_GENERATED_REVISION_QUESTIONS':
-      return {
-        ...state,
+      return Object.assign({}, state, {
         questions: action.questions
-      };
+      });
     default:
       return state || false;
   }
