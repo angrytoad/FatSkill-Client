@@ -1,13 +1,11 @@
 /* eslint-disable */
 import React from 'react';
-import Dragula from 'react-dragula';
 
 const RevisionCreationQuestionLister = React.createClass({
 
   mapNewQuestionOrder() {
     let currentMapping = [];
     let rows = document.querySelectorAll('#RevisionCreationQuestionLister tbody tr');
-    console.log(rows);
     for(let i=0; i<rows.length; i++){
       let row = rows[i];
       let id = row.dataset.id;
@@ -73,7 +71,7 @@ const RevisionCreationQuestionLister = React.createClass({
           return handle.classList.contains('fa-arrows');
         },
       };
-      let drake = Dragula([componentBackingInstance], options);
+      let drake = dragula([componentBackingInstance], options);
       drake.on('drop', (el, target, source, sibling) => {
         this.mapNewQuestionOrder();
         drake.cancel(true);
