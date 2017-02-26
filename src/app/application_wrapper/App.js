@@ -33,7 +33,8 @@ const App = (props) => {
       <Helmet
         titleTemplate="FatSkill | %s"
         link={[
-          {rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"}
+          {rel: "stylesheet", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"},
+          {rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css"}
         ]}
         script={[
           {"src": "https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"}

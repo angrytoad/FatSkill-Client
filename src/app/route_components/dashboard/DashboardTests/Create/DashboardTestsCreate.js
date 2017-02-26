@@ -49,7 +49,13 @@ const DashboardTestsCreate = React.createClass({
     e.preventDefault();
     let form = document.querySelector('#create-test-form');
     let data = serialize(form, { hash:true });
-    if(typeof data.name !== 'undefined' && typeof data.description !== 'undefined' && typeof data.public !== 'undefined'){
+    if(typeof data.name !== 'undefined' && typeof data.description !== 'undefined'){
+      if(typeof data.public === 'undefined'){
+        data.public = false;
+      }else{
+        data.public = true;
+      }
+      console.log(data);
       this.props.sendCreationRequest(data);
     }
   },
