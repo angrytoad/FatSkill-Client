@@ -7,8 +7,6 @@ import { Provider } from 'react-redux';
 import Express from 'express';
 import compression from 'compression';
 
-const document = {};
-
 /**
  * @author "Tom Freeborough"  <thomas@hotsnapper.com> (27 Jul 2016)
  *
